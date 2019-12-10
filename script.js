@@ -44,7 +44,6 @@ function appendAside () {
   aside.id = CSS_CLASS_PREFIX + '-aside'
   aside.style.border = '1px solid black'
   aside.style.padding = '1rem'
-  aside.style.margin = '0.5rem'
 
   var introParagraph = document.createElement('p')
   aside.appendChild(introParagraph)
