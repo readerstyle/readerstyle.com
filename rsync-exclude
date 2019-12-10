@@ -1,0 +1,9 @@
+.git
+Makefile
+README.md
+deploy
+node_modules
+package-lock.json
+package.json
+pre-commit
+tidy.config

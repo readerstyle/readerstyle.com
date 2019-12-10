@@ -1,0 +1,11 @@
+{
+  "private": true,
+  "scripts": {
+    "build": "tidy -config tidy.config index.html | sponge index.html",
+    "lint": "standard && csslint --quiet --ignore=import styles"
+  },
+  "devDependencies": {
+    "csslint": "^1.0.5",
+    "standard": "^14.3.1"
+  }
+}

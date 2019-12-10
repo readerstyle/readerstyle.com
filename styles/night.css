@@ -1,0 +1,18 @@
+@import "common.css";
+
+html {
+  background-color: black;
+  color: white;
+}
+
+a[href] {
+  color: orange;
+}
+
+a[href]:active {
+  color: yellow;
+}
+
+a[href]:visited {
+  color: red;
+}

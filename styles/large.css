@@ -1,0 +1,14 @@
+@import "common.css";
+
+html {
+  font-size: 4.0vw;
+}
+
+@media all and (min-width:1000px) {
+  html { font-size: 40px; }
+}
+
+@media all and (max-width:520px) {
+  html{ font-size: 28px; }
+}
+
