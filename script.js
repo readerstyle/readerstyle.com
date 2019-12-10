@@ -17,6 +17,10 @@ var styles = [
   {
     slug: 'large',
     display: 'Large Print'
+  },
+  {
+    slug: 'none',
+    display: 'None'
   }
 ]
 
@@ -143,12 +147,13 @@ function styleButton (style) {
   })
   button.style.marginRight = '1rem'
   button.style.padding = '1ex'
+  if (style.slug === 'none') button.disabled = true
   return button
 }
 
 function applyStyle (style) {
   removeAllStyleLinks()
-  addStyleLink(style)
+  if (style.slug !== 'none') addStyleLink(style)
   updateStyleButtons(style)
 }
 
