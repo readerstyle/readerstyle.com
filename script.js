@@ -36,6 +36,7 @@ document.addEventListener('DOMContentLoaded', function () {
     return
   }
   appendAside()
+  applyCookie()
 })
 
 function appendAside () {
@@ -66,6 +67,20 @@ function appendAside () {
 
   var firstChild = document.body.children[0]
   document.body.insertBefore(aside, firstChild)
+}
+
+function applyCookie () {
+  var cookie = document.cookie
+  if (!cookie) return
+  var re = new RegExp('^slug=([a-z]+)$')
+  var match = re.exec(cookie)
+  if (!match) return
+  var slug = match[1]
+  var style = styles.find(function (style) {
+    return style.slug === slug
+  })
+  if (!style) return
+  applyStyle(style)
 }
 
 var ALLOWED_TAG_NAMES = [
@@ -151,6 +166,7 @@ function applyStyle (style) {
   removeAllStyleLinks()
   if (style.slug !== 'none') addStyleLink(style)
   updateStyleButtons(style)
+  setCookie(style)
 }
 
 function removeAllStyleLinks () {
@@ -176,6 +192,10 @@ function updateStyleButtons (style) {
     var button = buttons[index]
     button.disabled = button.dataset.slug === style.slug
   }
+}
+
+function setCookie (style) {
+  document.cookie = 'slug=' + style.slug + ';domain=readerstyle.com;secure'
 }
 
 function isStyleLink (element) {
