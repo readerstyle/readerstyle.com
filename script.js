@@ -35,7 +35,10 @@ document.addEventListener('DOMContentLoaded', function () {
     })
     return
   }
+  appendAside()
+})
 
+function appendAside () {
   var aside = document.createElement('aside')
   aside.id = CSS_CLASS_PREFIX + '-aside'
   aside.style.border = '1px solid black'
@@ -63,7 +66,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   var firstChild = document.body.children[0]
   document.body.insertBefore(aside, firstChild)
-})
+}
 
 var ALLOWED_TAG_NAMES = [
   'A',
