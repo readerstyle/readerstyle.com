@@ -19,3 +19,7 @@ body {
   max-width: 33rem;
   padding: 1rem;
 }
+
+pre {
+  white-space: pre-wrap;
+}
