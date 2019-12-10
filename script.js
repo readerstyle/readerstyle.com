@@ -54,15 +54,17 @@ function appendAside () {
     aside.appendChild(styleButton(style))
   })
 
-  var aboutParagraph = document.createElement('p')
-  aside.appendChild(aboutParagraph)
-  aboutParagraph.appendChild(document.createTextNode('Visit '))
-  var link = document.createElement('a')
-  aboutParagraph.appendChild(link)
-  link.appendChild(document.createTextNode(DOMAIN))
-  link.setAttribute('href', 'https://' + DOMAIN)
-  link.setAttribute('target', '_blank')
-  aboutParagraph.appendChild(document.createTextNode(' for more information.'))
+  if (window.location.hostname !== DOMAIN) {
+    var aboutParagraph = document.createElement('p')
+    aside.appendChild(aboutParagraph)
+    aboutParagraph.appendChild(document.createTextNode('Visit '))
+    var link = document.createElement('a')
+    aboutParagraph.appendChild(link)
+    link.appendChild(document.createTextNode(DOMAIN))
+    link.setAttribute('href', 'https://' + DOMAIN)
+    link.setAttribute('target', '_blank')
+    aboutParagraph.appendChild(document.createTextNode(' for more information.'))
+  }
 
   var firstChild = document.body.children[0]
   document.body.insertBefore(aside, firstChild)
