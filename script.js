@@ -13,7 +13,8 @@ var styles = [
   }
 ]
 
-var CSS_CLASS_PREFIX = 'readerstyle.com'
+var DOMAIN = 'readerstyle.com'
+var CSS_CLASS_PREFIX = DOMAIN
 
 document.addEventListener('DOMContentLoaded', function () {
   var errors = simpleMarkupErrors()
@@ -44,8 +45,8 @@ document.addEventListener('DOMContentLoaded', function () {
   aboutParagraph.appendChild(document.createTextNode('Visit '))
   var link = document.createElement('a')
   aboutParagraph.appendChild(link)
-  link.appendChild(document.createTextNode('readerstyle.com'))
-  link.setAttribute('href', 'https://readerstyle.com')
+  link.appendChild(document.createTextNode(DOMAIN))
+  link.setAttribute('href', 'https://' + DOMAIN)
   link.setAttribute('target', '_blank')
   aboutParagraph.appendChild(document.createTextNode(' for more information.'))
 
@@ -103,7 +104,7 @@ function simpleMarkupErrors () {
   var scripts = document.getElementsByTagName('script')
   for (index = 0; index < scripts.length; index++) {
     var script = scripts[index]
-    if (script.src !== 'https://readerstyle.com/script.js') {
+    if (script.src !== 'https://' + DOMAIN + '/script.js') {
       errors.push('Extra Script: ' + script.src)
     }
   }
@@ -157,7 +158,7 @@ function removeAllStyleLinks () {
 function addStyleLink (style) {
   var link = document.createElement('link')
   link.setAttribute('rel', 'stylesheet')
-  link.setAttribute('href', 'https://readerstyle.com/styles/' + style.slug + '.css')
+  link.setAttribute('href', 'https://' + DOMAIN + '/styles/' + style.slug + '.css')
   document.head.appendChild(link)
 }
 
