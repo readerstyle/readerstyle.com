@@ -6,4 +6,5 @@ node_modules
 package-lock.json
 package.json
 pre-commit
+rsync-exclude
 tidy.config
