@@ -1,3 +1,10 @@
+/*
+https://readerstyle.com/script.js
+
+Contributors:
+- Kyle E. Mitchell, independent
+*/
+
 var styles = [
   {
     slug: 'day',
