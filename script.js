@@ -13,7 +13,7 @@ var styles = [
   }
 ]
 
-var CSS_CLASS_PREFIX = 'readerstyle.org'
+var CSS_CLASS_PREFIX = 'readerstyle.com'
 
 document.addEventListener('DOMContentLoaded', function () {
   var errors = simpleMarkupErrors()
