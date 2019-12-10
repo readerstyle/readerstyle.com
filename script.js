@@ -112,13 +112,6 @@ function simpleMarkupErrors () {
       errors.push('Extra Tag: ' + tagName)
     }
   }
-  var scripts = document.getElementsByTagName('script')
-  for (index = 0; index < scripts.length; index++) {
-    var script = scripts[index]
-    if (script.src !== 'https://' + DOMAIN + '/script.js') {
-      errors.push('Extra Script: ' + script.src)
-    }
-  }
   return errors
 }
 
