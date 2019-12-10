@@ -195,7 +195,7 @@ function updateStyleButtons (style) {
 }
 
 function setCookie (style) {
-  document.cookie = 'slug=' + style.slug + ';domain=readerstyle.com;secure'
+  document.cookie = 'slug=' + style.slug + ';domain=readerstyle.com;secure;samesite=none'
 }
 
 function isStyleLink (element) {
