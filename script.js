@@ -138,7 +138,9 @@ function allTagNames (elements) {
   var tagNames = []
   for (var index = 0; index < elements.length; index++) {
     var tagName = elements[index].tagName
-    if (!has(tagNames, tagName)) tagNames.push(tagName)
+    if (!has(tagNames, tagName)) {
+      tagNames.push(tagName)
+    }
   }
   return tagNames
 }
@@ -159,13 +161,17 @@ function styleButton (style) {
   })
   button.style.marginRight = '1rem'
   button.style.padding = '1ex'
-  if (style.slug === 'none') button.disabled = true
+  if (style.slug === 'none') {
+    button.disabled = true
+  }
   return button
 }
 
 function applyStyle (style) {
   removeAllStyleLinks()
-  if (style.slug !== 'none') addStyleLink(style)
+  if (style.slug !== 'none') {
+    addStyleLink(style)
+  }
   updateStyleButtons(style)
   setCookie(style)
 }
