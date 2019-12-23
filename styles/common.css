@@ -15,7 +15,7 @@ html {
 }
 
 body {
-  margin: 1rem 1rem 50vh 1rem;
+  margin: 1rem auto 50vh auto;
   max-width: 33rem;
   padding: 1rem;
 }
